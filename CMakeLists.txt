@@ -143,6 +143,7 @@ endif()
 
 add_library(dmlc ${SOURCE})
 target_link_libraries(dmlc ${dmlccore_LINKER_LIBS})
+target_include_directories(dmlc PUBLIC include)
 
 # ---[ Install Includes
 if(INSTALL_INCLUDE_DIR)
