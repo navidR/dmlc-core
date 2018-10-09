@@ -143,7 +143,11 @@ endif()
 
 add_library(dmlc ${SOURCE})
 target_link_libraries(dmlc ${dmlccore_LINKER_LIBS})
-target_include_directories(dmlc PUBLIC include)
+target_include_directories(dmlc
+    PUBLIC
+        $<INSTALL_INTERFACE:include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+)
 
 # ---[ Install Includes
 if(INSTALL_INCLUDE_DIR)
